@@ -1,24 +1,91 @@
-# Nestjs specific
-/dist
-/node_modules
-/build
-/tmp
+########## API ##########
+
+# compiled output
+apps/api/dist
+apps/api/node_modules
+apps/api/build
 
 # Logs
-logs
-*.log
-npm-debug.log*
-pnpm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
+apps/api/logs
+apps/api/*.log
+apps/api/npm-debug.log*
+apps/api/pnpm-debug.log*
+apps/api/yarn-debug.log*
+apps/api/yarn-error.log*
+apps/api/lerna-debug.log*
+
+# OS
+apps/api/.DS_Store
+
+# Tests
+apps/api/coverage
+apps/api/.nyc_output
+
+# IDEs and editors
+apps/api/.idea
+apps/api/.project
+apps/api/.classpath
+apps/api/.c9/
+apps/api/*.launch
+apps/api/.settings/
+apps/api/*.sublime-workspace
+
+# IDE - VSCode
+apps/api/.vscode/*
+apps/api/!.vscode/settings.json
+apps/api/!.vscode/tasks.json
+apps/api/!.vscode/launch.json
+apps/api/!.vscode/extensions.json
 
 # dotenv environment variable files
-.env
-.env.development
-.env.test
-.env.production
+apps/api/.env
+apps/api/.env.development.local
+apps/api/.env.test.local
+apps/api/.env.production.local
+apps/api/.env.local
 
 # temp directory
-.temp
-.tmp
+apps/api/.temp
+apps/api/.tmp
+
+# Runtime data
+apps/api/pids
+apps/api/*.pid
+apps/api/*.seed
+apps/api/*.pid.lock
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+apps/api/report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+########## WEB ##########
+
+# dependencies
+apps/web/node_modules
+
+# testing
+apps/web/coverage
+
+# next.js
+apps/web/.next/
+apps/web/out/
+
+# production
+apps/web/build
+
+# misc
+apps/web/.DS_Store
+apps/web/*.pem
+
+# debug
+apps/web/npm-debug.log*
+
+
+# env files (can opt-in for committing if needed)
+apps/web/.env*
+
+# vercel
+apps/web/.vercel
+
+# typescript
+apps/web/*.tsbuildinfo
+apps/web/next-env.d.ts
