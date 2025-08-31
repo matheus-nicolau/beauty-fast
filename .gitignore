@@ -4,6 +4,7 @@
 apps/api/dist
 apps/api/node_modules
 apps/api/build
+apps/api/generated
 
 # Logs
 apps/api/logs
