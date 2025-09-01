@@ -1,10 +1,10 @@
-export interface SignupDTO {
+export class SignupDTO {
   name: string;
   email: string;
   password: string;
 }
 
-export interface SigninDTO {
+export class SigninDTO {
   email: string;
   password: string;
 }
