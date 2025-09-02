@@ -1,6 +1,7 @@
 import { UserCreateDTO } from 'src/dto/user';
 import { Entity } from '../entity';
 import { EncryptUtils } from 'src/utils/encrypt-utils';
+import { UserValidatorFactory } from 'src/factories/uservalidatorfactory';
 
 export class User extends Entity {
   private constructor(
@@ -22,7 +23,7 @@ export class User extends Entity {
   }
 
   protected validate(): void {
-    throw new Error('Method not implemented.');
+    UserValidatorFactory.create().validate(this);
   }
 
   public getEmail() {
