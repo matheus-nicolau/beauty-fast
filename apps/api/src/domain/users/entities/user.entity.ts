@@ -3,6 +3,7 @@ import {
   CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 
 @Entity()
@@ -10,18 +11,18 @@ export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ nullable: false })
+  @Column({ length: 100, nullable: false })
   name: string;
 
-  @Column({ nullable: false, unique: true })
+  @Column({ length: 100, nullable: false, unique: true })
   email: string;
 
-  @Column({ nullable: false })
+  @Column({ length: 255, nullable: false })
   password: string;
 
   @CreateDateColumn({ name: 'created_at' })
-  createdAt: string;
+  createdAt?: string;
 
-  @CreateDateColumn({ name: 'updated_at' })
-  updatedAt: string;
+  @UpdateDateColumn({ name: 'updated_at' })
+  updatedAt?: string;
 }

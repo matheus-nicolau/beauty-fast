@@ -1,6 +1,16 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+  Res,
+} from '@nestjs/common';
 import { UsersService } from './users.service';
-import { UserDTO } from 'src/dto/user.dto';
+import { UserDTO } from 'src/domain/users/dto/user.dto';
+import type { Response } from 'express';
 
 @Controller('user')
 export class UsersController {
@@ -12,8 +22,20 @@ export class UsersController {
   }
 
   @Post('create')
-  async createUser(@Body() user: UserDTO) {
-    const userCreated = await this.userService.creteUser(user);
-    return userCreated;
+  async createUser(@Res() resp: Response, @Body() user: UserDTO) {
+    const respUser = await this.userService.creteUser(user);
+    return resp.status(201).end(respUser);
+  }
+
+  @Put()
+  async updateUser(@Res() resp: Response, @Body() user: UserDTO) {
+    const respUser = await this.userService.updateUser(user);
+    return resp.status(200).end(respUser);
+  }
+
+  @Delete('remove/:email')
+  async deleteUser(@Res() resp: Response, @Param('email') email: string) {
+    const respUser = await this.userService.deleteUser(email);
+    return resp.status(200).end(respUser);
   }
 }
