@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from './domain/users/users.module';
+import { UserService } from './domain/user/user.service';
 
 @Module({
   imports: [
@@ -16,13 +17,13 @@ import { UsersModule } from './domain/users/users.module';
       schema: process.env.DB_SCHEMA,
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
-      synchronize: true,
+      synchronize: true, // cuidado não usar em PRD
       logging: false,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
     }),
     UsersModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, UserService],
 })
 export class AppModule {}
