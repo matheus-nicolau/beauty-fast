@@ -1,10 +1,11 @@
-export default async function Login() {
-  const data = await fetch("http://127.0.0.1:3004/user/list");
-  const users = await data.json();
+import { LoginForm } from "@/components/login-form";
 
+export default async function Login() {
   return (
-    <div>
-      <ul>{users[0]}</ul>
+    <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
+      <div className="w-full max-w-sm">
+        <LoginForm />
+      </div>
     </div>
   );
 }
