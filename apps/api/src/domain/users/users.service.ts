@@ -4,11 +4,13 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { UserDTO } from 'src/domain/users/dto/user.dto';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
+import { HashingService } from 'src/auth/hashing/hashing.service';
 
 @Injectable()
 export class UsersService {
   constructor(
     @InjectRepository(User) private readonly userRepository: Repository<User>,
+    private readonly hashingService: HashingService,
   ) {}
 
   async findAllUsers(): Promise<User[]> {
@@ -25,7 +27,13 @@ export class UsersService {
     if (userAlreadyExists) throw new NotFoundException('Usuário já cadastrado');
 
     try {
-      await this.userRepository.save(user);
+      const passwordHash = await this.hashingService.hash(user.password);
+      const userToSave = {
+        name: user.name,
+        email: user.email,
+        password: passwordHash,
+      };
+      await this.userRepository.save(userToSave);
     } catch (error) {
       throw new NotFoundException(`Erro ao salvar usuário !`);
     }
@@ -37,8 +45,13 @@ export class UsersService {
     await this.findUserByEmail(user.email);
     const updateUser = {
       name: user?.name,
-      password: user?.password,
     };
+
+    if (user?.password) {
+      const passwordHash = await this.hashingService.hash(user.password);
+
+      updateUser['password'] = passwordHash;
+    }
 
     await this.userRepository
       .createQueryBuilder()
