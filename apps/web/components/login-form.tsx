@@ -34,6 +34,7 @@ export function LoginForm({
                   type="email"
                   placeholder="email@exemplo.com"
                   required
+                  className="text-zinc-50"
                 />
               </div>
               <div className="grid gap-3">
