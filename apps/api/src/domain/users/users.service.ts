@@ -9,7 +9,8 @@ import { HashingService } from 'src/auth/hashing/hashing.service';
 @Injectable()
 export class UsersService {
   constructor(
-    @InjectRepository(User) private readonly userRepository: Repository<User>,
+    @InjectRepository(User)
+    private readonly userRepository: Repository<User>,
     private readonly hashingService: HashingService,
   ) {}
 
