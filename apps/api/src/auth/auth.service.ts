@@ -19,7 +19,7 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async sigin(sigIn: SigInDTO): Promise<string> {
+  async sigin(sigIn: SigInDTO) {
     const user = await this.userRepository.findOneBy({ email: sigIn.email });
     if (!user) throw new UnauthorizedException('Email ou senha incorretos !');
 
@@ -43,6 +43,6 @@ export class AuthService {
       },
     );
 
-    return accessToken;
+    return { accessToken: accessToken };
   }
 }

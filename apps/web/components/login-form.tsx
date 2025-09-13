@@ -10,11 +10,40 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
+import Form from "next/form";
+import { cookies } from "next/headers";
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  async function handleSubmit(formData: FormData) {
+    "use server";
+
+    const email = formData.get("email");
+    const password = formData.get("password");
+
+    const res = await fetch("http://127.0.0.1:3004/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer ",
+      },
+
+      body: JSON.stringify({ email: email, password: password }),
+    });
+
+    const data = await res.json();
+    const accessToken = data.accessToken;
+
+    const cookieStorage = await cookies();
+    cookieStorage.set("Authorization", `Bearer ${accessToken}`, {
+      httpOnly: true,
+      maxAge: 60 * 60 * 1 * 1,
+      path: "/",
+    });
+  }
+
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
@@ -25,16 +54,17 @@ export function LoginForm({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
+          <Form action={handleSubmit}>
             <div className="flex flex-col gap-6">
               <div className="grid gap-3">
                 <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
                   type="email"
+                  name="email"
                   placeholder="email@exemplo.com"
+                  autoComplete="off"
                   required
-                  className="text-zinc-50"
                 />
               </div>
               <div className="grid gap-3">
@@ -47,7 +77,13 @@ export function LoginForm({
                     Esqueceu sua senha?
                   </a>
                 </div>
-                <Input id="password" type="password" required />
+                <Input
+                  id="password"
+                  type="password"
+                  name="password"
+                  autoComplete="off"
+                  required
+                />
               </div>
               <div className="flex flex-col gap-3">
                 <Button type="submit" className="w-full">
@@ -71,7 +107,7 @@ export function LoginForm({
                 cadastre-se
               </Link>
             </div>
-          </form>
+          </Form>
         </CardContent>
       </Card>
     </div>
