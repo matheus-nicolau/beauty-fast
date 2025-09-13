@@ -7,12 +7,15 @@ import {
   Post,
   Put,
   Res,
+  UseGuards,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { UserDTO } from 'src/domain/users/dto/user.dto';
 import type { Response } from 'express';
+import { AuthTokenGuard } from 'src/auth/guard/auth-token.guard';
 
 @Controller('user')
+@UseGuards(AuthTokenGuard)
 export class UsersController {
   constructor(private readonly userService: UsersService) {}
 
