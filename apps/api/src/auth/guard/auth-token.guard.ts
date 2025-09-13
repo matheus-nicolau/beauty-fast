@@ -9,6 +9,7 @@ import { Request } from 'express';
 import jwtConfig from '../config/jwt.config';
 import { JwtService } from '@nestjs/jwt';
 import type { ConfigType } from '@nestjs/config';
+import { REQUEST_PAYLOAD } from '../consts/payload.const';
 
 @Injectable()
 export class AuthTokenGuard implements CanActivate {
@@ -31,7 +32,7 @@ export class AuthTokenGuard implements CanActivate {
         this.jwtConfiguration,
       );
 
-      request['user'] = payload;
+      request[REQUEST_PAYLOAD] = payload;
     } catch {
       throw new UnauthorizedException('Falha ao fazer login');
     }

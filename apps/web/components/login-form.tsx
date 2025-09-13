@@ -27,7 +27,6 @@ export function LoginForm({
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer ",
       },
 
       body: JSON.stringify({ email: email, password: password }),
