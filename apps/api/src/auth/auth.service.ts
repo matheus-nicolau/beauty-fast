@@ -7,6 +7,8 @@ import { HashingService } from './hashing/hashing.service';
 import jwtConfig from './config/jwt.config';
 import type { ConfigType } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
+import { RefreshTokenDTO } from './dto/refresh-toke.dto';
+import { TokenPayloadDto } from './dto/token-payload.dto';
 
 @Injectable()
 export class AuthService {
@@ -30,19 +32,48 @@ export class AuthService {
     if (!comparedPassword)
       throw new UnauthorizedException('Email ou senha incorretos !');
 
-    const accessToken = await this.jwtService.signAsync(
+    return await this.generateTokens(user);
+  }
+
+  async analizeToken(token: RefreshTokenDTO) {
+    const resp: TokenPayloadDto = await this.jwtService.verifyAsync(
+      token.refreshToken,
+      this.jwtConfiguration,
+    );
+
+    const user = await this.userRepository.findOneBy({ id: resp.sub });
+    if (!user) throw new UnauthorizedException('Usuário deve fazer login !');
+
+    return this.generateTokens(user);
+  }
+
+  private async generateTokens(user: User) {
+    const accessToken = await this.signJwtAsync<Partial<User>>(
+      user.id,
+      this.jwtConfiguration.ttl,
+      { email: user.email },
+    );
+
+    const refreshToken = await this.signJwtAsync(
+      user.id,
+      this.jwtConfiguration.jwtRefreshTtl,
+    );
+
+    return { accessToken: accessToken, refreshToken: refreshToken };
+  }
+
+  private async signJwtAsync<T>(sub: string, expiresIn: number, payload?: T) {
+    return await this.jwtService.signAsync(
       {
-        sub: user.id,
-        email: user.email,
+        sub,
+        ...payload,
       },
       {
         audience: this.jwtConfiguration.audience,
         issuer: this.jwtConfiguration.issuer,
         secret: this.jwtConfiguration.secret,
-        expiresIn: this.jwtConfiguration.ttl,
+        expiresIn,
       },
     );
-
-    return { accessToken: accessToken };
   }
 }

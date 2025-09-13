@@ -1,10 +1,15 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  Injectable,
+  NotFoundException,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserDTO } from 'src/domain/users/dto/user.dto';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { HashingService } from 'src/auth/hashing/hashing.service';
+import { TokenPayloadDto } from 'src/auth/dto/token-payload.dto';
 
 @Injectable()
 export class UsersService {
@@ -42,8 +47,11 @@ export class UsersService {
     return 'usuário salvo com sucesso';
   }
 
-  async updateUser(user: UserDTO): Promise<string> {
-    await this.findUserByEmail(user.email);
+  async updateUser(user: UserDTO, token: TokenPayloadDto): Promise<string> {
+    const userFinded = await this.findUserByEmail(user.email);
+    if (userFinded.id !== token.sub)
+      throw new UnauthorizedException('Usuário não autorizado!');
+
     const updateUser = {
       name: user?.name,
     };
@@ -64,8 +72,10 @@ export class UsersService {
     return 'Usuário atualizado';
   }
 
-  async deleteUser(email: string): Promise<string> {
-    await this.findUserByEmail(email);
+  async deleteUser(email: string, token: TokenPayloadDto): Promise<string> {
+    const userFinded = await this.findUserByEmail(email);
+    if (userFinded.id !== token.sub)
+      throw new UnauthorizedException('Usuário não autorizado!');
 
     await this.userRepository
       .createQueryBuilder()

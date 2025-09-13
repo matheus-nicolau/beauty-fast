@@ -1,0 +1,67 @@
+@baseUrl = http://127.0.0.1:3004
+@accessToken = {{login.response.body.$.accessToken}}
+@refreshToken = {{login.response.body.$.refreshToken}}
+@email = {{createUser.request.body.$.email}}
+
+# Auth Module
+### /login
+
+# @name login
+POST {{baseUrl}}/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email" : "nicolau@gmail.com",
+     "password": "N@c123456"
+}
+
+### /refresh
+
+# @name refresh
+POST {{baseUrl}}/refresh HTTP/1.1
+Content-Type: application/json
+
+{
+    "refreshToken": "{{refreshToken}}"
+}
+
+
+# User Module
+### /create
+
+# @name createUser
+POST {{baseUrl}}/user/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Joana Adark",
+    "password": "N@c123456",
+    "email" : "joana.a.dark@gmail.com"
+}
+
+### /list
+
+# @name listUser
+GET {{baseUrl}}/user/list HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+### /update
+
+# @name updateUser
+PUT {{baseUrl}}/user HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "name": "Nicolau Testinho",
+    "password": "N@c123456",
+    "email" : "nicolau@gmail.com"
+}
+
+### /remove
+
+# @name deleteUser
+DELETE {{baseUrl}}/user/remove/joana.a.dark@gmail.com HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}

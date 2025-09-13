@@ -13,13 +13,15 @@ import { UsersService } from './users.service';
 import { UserDTO } from 'src/domain/users/dto/user.dto';
 import type { Response } from 'express';
 import { AuthTokenGuard } from 'src/auth/guard/auth-token.guard';
+import { TokenPayloaParam } from 'src/auth/params/token-payload.param';
+import { TokenPayloadDto } from 'src/auth/dto/token-payload.dto';
 
 @Controller('user')
-@UseGuards(AuthTokenGuard)
 export class UsersController {
   constructor(private readonly userService: UsersService) {}
 
   @Get('list')
+  @UseGuards(AuthTokenGuard)
   getUser(): Promise<UserDTO[]> {
     return this.userService.findAllUsers();
   }
@@ -31,14 +33,24 @@ export class UsersController {
   }
 
   @Put()
-  async updateUser(@Res() resp: Response, @Body() user: UserDTO) {
-    const respUser = await this.userService.updateUser(user);
+  @UseGuards(AuthTokenGuard)
+  async updateUser(
+    @TokenPayloaParam() token: TokenPayloadDto,
+    @Res() resp: Response,
+    @Body() user: UserDTO,
+  ) {
+    const respUser = await this.userService.updateUser(user, token);
     return resp.status(200).end(respUser);
   }
 
   @Delete('remove/:email')
-  async deleteUser(@Res() resp: Response, @Param('email') email: string) {
-    const respUser = await this.userService.deleteUser(email);
+  @UseGuards(AuthTokenGuard)
+  async deleteUser(
+    @TokenPayloaParam() token: TokenPayloadDto,
+    @Res() resp: Response,
+    @Param('email') email: string,
+  ) {
+    const respUser = await this.userService.deleteUser(email, token);
     return resp.status(200).end(respUser);
   }
 }
