@@ -54,7 +54,7 @@ Content-Type: application/json
 Authorization: Bearer {{accessToken}}
 
 {
-    "name": "Nicolau Testinho",
+    "name": "Nicolau Testão",
     "password": "N@c123456",
     "email" : "nicolau@gmail.com"
 }
