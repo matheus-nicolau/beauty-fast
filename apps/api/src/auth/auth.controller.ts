@@ -9,7 +9,6 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
   @Post('login')
   async login(@Res() resp: Response, @Body() sigIn: SigInDTO) {
-    await new Promise((res) => setTimeout(res, 10000));
     const respSigin = await this.authService.sigin(sigIn);
     return resp.status(HttpStatus.OK).json(respSigin);
   }
