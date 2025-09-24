@@ -17,9 +17,8 @@ export function LoginPage({
       <Card>
         <CardHeader>
           <CardTitle>Login com sua conta</CardTitle>
-          <FormLogin />
           <CardDescription>
-            Digite seu e-mail abaixo para acessar sua conta
+            <FormLogin />
           </CardDescription>
         </CardHeader>
         <CardContent></CardContent>

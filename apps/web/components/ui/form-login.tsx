@@ -22,7 +22,7 @@ export default function FormLogin() {
   return (
     <form onSubmit={onSubmit}>
       <div className="flex flex-col gap-6">
-        <div className="grid gap-3">
+        <div className="grid gap-2">
           <Label htmlFor="email">Email</Label>
           <Input
             id="email"
