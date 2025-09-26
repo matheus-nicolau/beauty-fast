@@ -1,133 +1,243 @@
 {
-    "lists": [
-        {
-            "id": "ca783c11-ac0d-4a36-b00c-85cf1f6cb532",
-            "title": "Backlog",
-            "cards": []
-        },
-        {
-            "id": "84c6e11c-ae37-4321-b14b-d8062e5a0617",
-            "title": "In Dev",
-            "cards": [
-                {
-                    "id": "0cd7ad53-d920-4fe9-8888-9eecc825fdd9",
-                    "listId": "84c6e11c-ae37-4321-b14b-d8062e5a0617",
-                    "title": "[ S03-3T25 ] - Criação da tela Home Site",
-                    "description": "",
-                    "dueDate": "2025-10-01T02:30:00.000Z",
-                    "labels": [
-                        {
-                            "id": "4cd2ac6e-4fe6-43e9-86ea-67272d27da21",
-                            "title": "Front",
-                            "color": "#00c2e0"
-                        }
-                    ],
-                    "checkboxes": [],
-                    "comments": []
-                }
-            ]
-        },
-        {
-            "id": "09b213ac-fd81-4d51-9480-4dfdfb546ebc",
-            "title": "Review",
-            "cards": []
-        },
-        {
-            "id": "2cd47761-feb9-43ed-aaea-398a0862c5c8",
-            "title": "Testing",
-            "cards": []
-        },
-        {
-            "id": "b09ad2ac-85d9-4c12-a403-650cefb9827e",
-            "title": "To Deploy",
-            "cards": []
-        },
-        {
-            "id": "2f54b83e-0a72-4da4-8d82-366e8c9a80f6",
-            "title": "Done",
-            "cards": [
-                {
-                    "id": "89dcefa4-ce6e-414c-841e-d5bef9f86638",
-                    "listId": "2f54b83e-0a72-4da4-8d82-366e8c9a80f6",
-                    "title": "[ S02-3T25 ] - Criação da tela de Login.",
-                    "description": "",
-                    "dueDate": "2025-09-24T22:00:00.000Z",
-                    "labels": [
-                        {
-                            "id": "4cd2ac6e-4fe6-43e9-86ea-67272d27da21",
-                            "title": "Front",
-                            "color": "#00c2e0"
-                        }
-                    ],
-                    "checkboxes": [],
-                    "comments": []
-                },
-                {
-                    "id": "01f8c4aa-0e8d-46a4-8845-a63e6801d4f8",
-                    "listId": "2f54b83e-0a72-4da4-8d82-366e8c9a80f6",
-                    "title": "[ S02-3T25 ] - Criar módulo de autenticação.",
-                    "description": "",
-                    "dueDate": "2025-09-24T22:00:00.000Z",
-                    "labels": [
-                        {
-                            "id": "5cae1ccf-2fec-4313-98b0-7eab6fe815ec",
-                            "title": "Back",
-                            "color": "#ff9f1a"
-                        }
-                    ],
-                    "checkboxes": [
-                        {
-                            "id": "fc0f0e5c-eb0e-4a57-a7ad-8f710dc88c0e",
-                            "title": "Criar base de módulo",
-                            "checked": true
-                        },
-                        {
-                            "id": "2f5bef27-2b60-41bc-a366-880734967941",
-                            "title": "Criar Service",
-                            "checked": true
-                        },
-                        {
-                            "id": "35f36f46-ee15-48e3-b730-9fe0dae37e0e",
-                            "title": "Criar controller",
-                            "checked": true
-                        }
-                    ],
-                    "comments": []
-                }
-            ]
-        }
-    ],
-    "archive": {
-        "lists": [],
-        "cards": []
+  "lists": [
+    {
+      "id": "ca783c11-ac0d-4a36-b00c-85cf1f6cb532",
+      "title": "Backlog",
+      "cards": []
     },
-    "settings": {
-        "labels": [
+    {
+      "id": "84c6e11c-ae37-4321-b14b-d8062e5a0617",
+      "title": "In Dev",
+      "cards": [
+        {
+          "id": "0cd7ad53-d920-4fe9-8888-9eecc825fdd9",
+          "listId": "84c6e11c-ae37-4321-b14b-d8062e5a0617",
+          "title": "[ S06-3T25 ] - Criação da tela Home Site",
+          "description": "",
+          "dueDate": "2025-10-01T02:30:00.000Z",
+          "labels": [
             {
-                "id": "4cd2ac6e-4fe6-43e9-86ea-67272d27da21",
-                "title": "Front",
-                "color": "#00c2e0"
+              "id": "4cd2ac6e-4fe6-43e9-86ea-67272d27da21",
+              "title": "Front",
+              "color": "#00c2e0"
+            }
+          ],
+          "checkboxes": [],
+          "comments": []
+        }
+      ]
+    },
+    {
+      "id": "09b213ac-fd81-4d51-9480-4dfdfb546ebc",
+      "title": "Review",
+      "cards": []
+    },
+    {
+      "id": "2cd47761-feb9-43ed-aaea-398a0862c5c8",
+      "title": "Testing",
+      "cards": []
+    },
+    {
+      "id": "b09ad2ac-85d9-4c12-a403-650cefb9827e",
+      "title": "To Deploy",
+      "cards": []
+    },
+    {
+      "id": "2f54b83e-0a72-4da4-8d82-366e8c9a80f6",
+      "title": "Done",
+      "cards": [
+        {
+          "id": "01f8c4aa-0e8d-46a4-8845-a63e6801d4f8",
+          "listId": "2f54b83e-0a72-4da4-8d82-366e8c9a80f6",
+          "title": "[ S05-3T25 ] - Criar módulo de autenticação.",
+          "description": "",
+          "dueDate": "2025-09-24T22:00:00.000Z",
+          "labels": [
+            {
+              "id": "5cae1ccf-2fec-4313-98b0-7eab6fe815ec",
+              "title": "Back",
+              "color": "#ff9f1a"
+            }
+          ],
+          "checkboxes": [
+            {
+              "id": "fc0f0e5c-eb0e-4a57-a7ad-8f710dc88c0e",
+              "title": "Criar base de módulo",
+              "checked": true
             },
             {
-                "id": "e52d7f9d-ecdd-4885-961d-7a5ea2896ef3",
-                "title": "Bug",
-                "color": "#eb5a46"
+              "id": "2f5bef27-2b60-41bc-a366-880734967941",
+              "title": "Criar Service",
+              "checked": true
             },
             {
-                "id": "66c444ab-5256-422c-bb5b-ceb435f67c5c",
-                "title": "CI/CD",
-                "color": "#c377e0"
-            },
+              "id": "35f36f46-ee15-48e3-b730-9fe0dae37e0e",
+              "title": "Criar controller",
+              "checked": true
+            }
+          ],
+          "comments": []
+        },
+        {
+          "id": "89dcefa4-ce6e-414c-841e-d5bef9f86638",
+          "listId": "2f54b83e-0a72-4da4-8d82-366e8c9a80f6",
+          "title": "[ S05-3T25 ] - Criação da tela de Login.",
+          "description": "",
+          "dueDate": "2025-09-24T22:00:00.000Z",
+          "labels": [
             {
+              "id": "4cd2ac6e-4fe6-43e9-86ea-67272d27da21",
+              "title": "Front",
+              "color": "#00c2e0"
+            }
+          ],
+          "checkboxes": [],
+          "comments": []
+        }
+      ]
+    },
+    {
+      "id": "c0f87562-ea46-4cb2-9282-ad5e9b996897",
+      "title": "[ S04-3T25 ]",
+      "cards": [
+        {
+          "id": "20fa7a02-5dcc-4bea-89ea-e6b07959fc9c",
+          "listId": "c0f87562-ea46-4cb2-9282-ad5e9b996897",
+          "title": "[ S04-3T25 ] - Criação do módulo de usuários",
+          "description": "",
+          "dueDate": "2025-09-01T03:00:00.000Z",
+          "labels": [
+            {
+              "id": "5cae1ccf-2fec-4313-98b0-7eab6fe815ec",
+              "title": "Back",
+              "color": "#ff9f1a"
+            }
+          ],
+          "checkboxes": [],
+          "comments": []
+        },
+        {
+          "id": "61ce4eaf-3d74-4a9a-9ea5-aa1d80616002",
+          "listId": "c0f87562-ea46-4cb2-9282-ad5e9b996897",
+          "title": "[ S04-3T25 ] - Ações CRUD de Users",
+          "description": "",
+          "dueDate": "2025-09-01T03:00:00.000Z",
+          "labels": [
+            {
+              "id": "5cae1ccf-2fec-4313-98b0-7eab6fe815ec",
+              "title": "Back",
+              "color": "#ff9f1a"
+            }
+          ],
+          "checkboxes": [],
+          "comments": []
+        }
+      ]
+    }
+  ],
+  "archive": {
+    "lists": [
+      {
+        "id": "09f7689e-ef3a-425e-b32e-ff124687fd24",
+        "title": "[ S03-3T25 ] ",
+        "cards": [
+          {
+            "id": "8f3e6934-56f7-4171-b661-87bbe9ea9fa4",
+            "listId": "09f7689e-ef3a-425e-b32e-ff124687fd24",
+            "title": "[ S03-3T25 ] - Criação base do projeto backend",
+            "description": "",
+            "dueDate": "2025-08-16T03:00:00.000Z",
+            "labels": [
+              {
                 "id": "5cae1ccf-2fec-4313-98b0-7eab6fe815ec",
                 "title": "Back",
                 "color": "#ff9f1a"
-            },
-            {
-                "id": "95100342-8cee-46c1-b14e-e14b095ec514",
-                "title": "Tests",
-                "color": "#f2d600"
-            }
+              }
+            ],
+            "checkboxes": [],
+            "comments": []
+          },
+          {
+            "id": "b93d3f80-b533-4220-9bbe-2e22b2ee09e4",
+            "listId": "09f7689e-ef3a-425e-b32e-ff124687fd24",
+            "title": "[ S03-3T25 ] - Criação base do projeto frontend",
+            "description": "",
+            "dueDate": "2025-08-16T03:00:00.000Z",
+            "labels": [
+              {
+                "id": "4cd2ac6e-4fe6-43e9-86ea-67272d27da21",
+                "title": "Front",
+                "color": "#00c2e0"
+              }
+            ],
+            "checkboxes": [],
+            "comments": []
+          }
         ]
-    }
+      }
+    ],
+    "cards": [
+      {
+        "id": "8f3e6934-56f7-4171-b661-87bbe9ea9fa4",
+        "listId": "09f7689e-ef3a-425e-b32e-ff124687fd24",
+        "title": "[ S03-3T25 ] - Criação base do projeto backend",
+        "description": "",
+        "dueDate": "2025-08-16T03:00:00.000Z",
+        "labels": [
+          {
+            "id": "5cae1ccf-2fec-4313-98b0-7eab6fe815ec",
+            "title": "Back",
+            "color": "#ff9f1a"
+          }
+        ],
+        "checkboxes": [],
+        "comments": []
+      },
+      {
+        "id": "b93d3f80-b533-4220-9bbe-2e22b2ee09e4",
+        "listId": "09f7689e-ef3a-425e-b32e-ff124687fd24",
+        "title": "[ S03-3T25 ] - Criação base do projeto frontend",
+        "description": "",
+        "dueDate": "2025-08-16T03:00:00.000Z",
+        "labels": [
+          {
+            "id": "4cd2ac6e-4fe6-43e9-86ea-67272d27da21",
+            "title": "Front",
+            "color": "#00c2e0"
+          }
+        ],
+        "checkboxes": [],
+        "comments": []
+      }
+    ]
+  },
+  "settings": {
+    "labels": [
+      {
+        "id": "4cd2ac6e-4fe6-43e9-86ea-67272d27da21",
+        "title": "Front",
+        "color": "#00c2e0"
+      },
+      {
+        "id": "e52d7f9d-ecdd-4885-961d-7a5ea2896ef3",
+        "title": "Bug",
+        "color": "#eb5a46"
+      },
+      {
+        "id": "66c444ab-5256-422c-bb5b-ceb435f67c5c",
+        "title": "CI/CD",
+        "color": "#c377e0"
+      },
+      {
+        "id": "5cae1ccf-2fec-4313-98b0-7eab6fe815ec",
+        "title": "Back",
+        "color": "#ff9f1a"
+      },
+      {
+        "id": "95100342-8cee-46c1-b14e-e14b095ec514",
+        "title": "Tests",
+        "color": "#f2d600"
+      }
+    ]
+  }
 }

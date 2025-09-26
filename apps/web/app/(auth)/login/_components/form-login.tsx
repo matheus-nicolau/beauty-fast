@@ -4,14 +4,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useTransition } from "react";
-import { handleSubmit } from "@/app/(auth)/_actions/handleSubmit.action";
-import Spinner from "./spinner";
+import { handleSubmit } from "@/app/(auth)/login/_actions/handleSubmit.action";
+import Spinner from "@/components/ui/spinner";
 
 export default function FormLogin() {
   const [isPending, startTransition] = useTransition();
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
     const formData = new FormData(event.currentTarget);
 
     startTransition(() => {
