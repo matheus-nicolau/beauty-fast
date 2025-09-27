@@ -6,9 +6,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import FormLogin from "./form-login";
+import FormRegister from "./form-register";
 
-export function LoginCard({
+export function CardRegister({
   className,
   ...props
 }: React.ComponentProps<"div">) {
@@ -16,9 +16,9 @@ export function LoginCard({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle>Login com sua conta</CardTitle>
+          <CardTitle>Cadastre sua Loja</CardTitle>
           <CardDescription>
-            <FormLogin />
+            <FormRegister />
           </CardDescription>
         </CardHeader>
         <CardContent></CardContent>

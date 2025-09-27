@@ -91,7 +91,7 @@ export default function FormLogin() {
       </div>
       <div className="mt-4 text-center text-sm">
         Não possui uma conta ?
-        <Link href="/testapi" className="hover:text-zinc-600 ml-1">
+        <Link href="/register" className="hover:text-zinc-600 ml-1">
           cadastre-se
         </Link>
       </div>
