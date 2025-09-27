@@ -6,9 +6,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import FormLogin from "./ui/form-login";
+import FormLogin from "./form-login";
 
-export function LoginPage({
+export function LoginCard({
   className,
   ...props
 }: React.ComponentProps<"div">) {
