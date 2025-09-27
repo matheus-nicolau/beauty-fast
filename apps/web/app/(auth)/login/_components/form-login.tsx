@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useTransition } from "react";
-import { handleSubmit } from "@/app/(auth)/login/_actions/handleSubmit.action";
+import { handleLogin } from "@/app/(auth)/login/_actions/handleLogin.action";
 import Spinner from "@/components/ui/spinner";
 
 export default function FormLogin() {
@@ -16,7 +16,7 @@ export default function FormLogin() {
     const formData = new FormData(event.currentTarget);
 
     startTransition(() => {
-      handleSubmit(formData);
+      handleLogin(formData);
     });
   }
 
@@ -37,12 +37,12 @@ export default function FormLogin() {
         <div className="grid gap-3">
           <div className="flex items-center">
             <Label htmlFor="password">Senha</Label>
-            <a
-              href="#"
+            <Link
+              href="/recover"
               className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
             >
               Esqueceu sua senha?
-            </a>
+            </Link>
           </div>
           <Input
             id="password"
@@ -91,7 +91,7 @@ export default function FormLogin() {
       </div>
       <div className="mt-4 text-center text-sm">
         Não possui uma conta ?
-        <Link href="/testapi" className="hover:text-zinc-600 ml-1">
+        <Link href="/register" className="hover:text-zinc-600 ml-1">
           cadastre-se
         </Link>
       </div>

@@ -1,9 +1,8 @@
 "use server";
 
-import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
-export async function handleSubmit(formData: FormData) {
-  "use service";
+export async function handleRecover(formData: FormData) {
   const email = formData.get("email");
   const password = formData.get("password");
 
@@ -19,10 +18,5 @@ export async function handleSubmit(formData: FormData) {
   const data = await res.json();
   const accessToken = data.accessToken;
 
-  const cookieStorage = await cookies();
-  cookieStorage.set("Authorization", `Bearer ${accessToken}`, {
-    httpOnly: true,
-    maxAge: 60 * 60 * 1 * 1,
-    path: "/",
-  });
+  redirect("/recover");
 }

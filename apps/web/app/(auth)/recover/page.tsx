@@ -1,15 +1,15 @@
 import ArrowLeftHeader from "@/components/ui/arrow-left-header";
-import { CardLogin } from "./_components/card-login";
+import { CardRecover } from "./_components/card-recover";
 
-export default async function Login() {
+export default function ForgotPassword() {
   return (
     <div>
       <header>
-        <ArrowLeftHeader reference="/" />
+        <ArrowLeftHeader reference="/login" />
       </header>
       <div className="flex mt-16 sm:mt-26 w-full items-center justify-center p-4 md:p-6">
         <div className="w-full max-w-sm">
-          <CardLogin />
+          <CardRecover />
         </div>
       </div>
     </div>
