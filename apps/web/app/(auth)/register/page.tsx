@@ -5,9 +5,9 @@ export default async function Login() {
   return (
     <div>
       <header>
-        <ArrowLeftHeader />
+        <ArrowLeftHeader reference="/" />
       </header>
-      <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
+      <div className="flex mt-16 sm:mt-26 w-full items-center justify-center p-6 md:p-10">
         <div className="w-full max-w-sm">
           <CardRegister />
         </div>

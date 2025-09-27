@@ -11,6 +11,7 @@ export default function RootLayout({
     <>
       <html lang="pt-br" suppressHydrationWarning>
         <head />
+
         <body>
           <ThemeProvider
             attribute="class"

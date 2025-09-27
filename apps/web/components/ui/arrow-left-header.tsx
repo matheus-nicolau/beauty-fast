@@ -1,10 +1,10 @@
 import { ArrowLeftIcon } from "lucide-react";
 import Link from "next/link";
 
-export default function ArrowLeftHeader() {
+export default function ArrowLeftHeader({ reference }: { reference: string }) {
   return (
-    <div className={"pt-4 sm:pt-3 pl-4 sm:pl-3"}>
-      <Link href={"/"}>
+    <div className={"mt-4 sm:mt-3 ml-4 sm:ml-3"}>
+      <Link href={reference}>
         <ArrowLeftIcon />
       </Link>
     </div>

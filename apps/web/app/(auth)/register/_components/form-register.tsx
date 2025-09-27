@@ -3,8 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useTransition } from "react";
-import { handleSubmit } from "@/app/(auth)/login/_actions/handleSubmit.action";
 import Spinner from "@/components/ui/spinner";
+import { handleRegister } from "../_actions/handleRegister.action";
+import Link from "next/link";
 
 export default function FormRegister() {
   const [isPending, startTransition] = useTransition();
@@ -15,7 +16,7 @@ export default function FormRegister() {
     const formData = new FormData(event.currentTarget);
 
     startTransition(() => {
-      handleSubmit(formData);
+      handleRegister(formData);
     });
   }
 
@@ -71,6 +72,12 @@ export default function FormRegister() {
             </Button>
           </div>
         )}
+      </div>
+      <div className="mt-6 text-center text-sm">
+        Já possui uma conta ?
+        <Link href="/login" className="hover:text-zinc-600 ml-1">
+          Tente Entrar
+        </Link>
       </div>
     </form>
   );

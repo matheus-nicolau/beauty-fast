@@ -12,7 +12,7 @@ export default function Home() {
         className={clsx(
           "border-b-2 border-zinc-100",
           "flex justify-between items-center",
-          "p-2"
+          "pt-4 pb-4 pl-4 sm:p-2"
         )}
       >
         <div>
@@ -23,25 +23,25 @@ export default function Home() {
             <ArchiveIcon /> Logo
           </Link>
         </div>
-        <div className={clsx("flex gap-2", "pl-2 sm:pl-8 pr-2 sm:pr-8")}>
+        <div className={clsx("flex gap-4 pl-4 sm:pl-8 pr-4 sm:pr-8")}>
           <Link
             href={"/register"}
             className={cn(
               buttonVariants({ variant: "outline" }),
-              "w-18 sm:w-24"
+              "w-20 sm:w-24"
             )}
           >
-            Cadastro
+            Cadastrar
           </Link>
 
           <Link
             href={"/login"}
             className={cn(
               buttonVariants({ variant: "default" }),
-              "w-18 sm:w-24"
+              "w-20 sm:w-24"
             )}
           >
-            Login
+            Entrar
           </Link>
         </div>
       </header>
