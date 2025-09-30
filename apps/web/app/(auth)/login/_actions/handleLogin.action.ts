@@ -27,6 +27,6 @@ export async function handleLogin(formData: FormData) {
   });
 
   if (accessToken !== undefined) {
-    redirect("/");
+    redirect("/calendar");
   }
 }

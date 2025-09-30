@@ -34,7 +34,7 @@ export default function FormLogin() {
             required
           />
         </div>
-        <div className="grid gap-3">
+        <div className="grid gap-2">
           <div className="flex items-center">
             <Label htmlFor="password">Senha</Label>
             <Link
