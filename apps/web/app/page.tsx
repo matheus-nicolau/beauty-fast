@@ -1,4 +1,3 @@
-import { ToggleTheme } from "@/components/toggle-theme";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import clsx from "clsx";
@@ -45,7 +44,6 @@ export default function Home() {
           </Link>
         </div>
       </header>
-      <ToggleTheme />
     </div>
   );
 }
