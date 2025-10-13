@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Plus } from "lucide-react";
 
-import { Calendars } from "@/components/calendars";
 import { NavUser } from "@/components/nav-user";
 import {
   Sidebar,
@@ -14,15 +13,14 @@ import {
   SidebarRail,
   SidebarSeparator,
 } from "@/components/ui/sidebar";
+import CalendarSide from "./calendar-side";
 
-// This is sample data.
 const data = {
   user: {
     name: "Nicolau",
     email: "nicolau@gmail.com",
-    avatar: "",
+    avatar: "/avatars/nicolau.jpg",
   },
-  calendars: [],
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -33,7 +31,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <SidebarSeparator className="mx-0" />
-        <Calendars />
+        <CalendarSide />
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenu>

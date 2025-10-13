@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useTransition } from "react";
-import Spinner from "@/components/ui/spinner";
 import { handleRegister } from "../_actions/handleRegister.action";
 import Link from "next/link";
+import { Spinner } from "@/components/ui/spinner";
 
 export default function FormRegister() {
   const [isPending, startTransition] = useTransition();
@@ -64,7 +64,7 @@ export default function FormRegister() {
           />
         </div>
         {isPending ? (
-          <Spinner spinnerProps={"border-zinc-400"} />
+          <Spinner variant="circle" />
         ) : (
           <div className="flex flex-col gap-3">
             <Button type="submit" className="w-full">

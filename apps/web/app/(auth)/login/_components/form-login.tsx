@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useTransition } from "react";
 import { handleLogin } from "@/app/(auth)/login/_actions/handleLogin.action";
-import Spinner from "@/components/ui/spinner";
+import { Spinner } from "@/components/ui/spinner";
 
 export default function FormLogin() {
   const [isPending, startTransition] = useTransition();
@@ -53,7 +53,7 @@ export default function FormLogin() {
           />
         </div>
         {isPending ? (
-          <Spinner spinnerProps={"border-zinc-400"} />
+          <Spinner variant="circle" />
         ) : (
           <div className="flex flex-col gap-3">
             <Button type="submit" className="w-full">
