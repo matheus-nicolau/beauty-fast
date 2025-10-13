@@ -1,17 +1,16 @@
-import { AppSidebar } from "@/components/app-sidebar";
+import { AppSidebar } from "@/components/app-sidebar"
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbList,
   BreadcrumbPage,
-} from "@/components/ui/breadcrumb";
-import { Separator } from "@/components/ui/separator";
+} from "@/components/ui/breadcrumb"
+import { Separator } from "@/components/ui/separator"
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "@/components/ui/sidebar";
-import { ToggleTheme } from "@/components/ui/toggle-theme";
+} from "@/components/ui/sidebar"
 
 export default function Page() {
   return (
@@ -27,20 +26,19 @@ export default function Page() {
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
-                <BreadcrumbPage>Setembro 2025</BreadcrumbPage>
-                <ToggleTheme />
+                <BreadcrumbPage>October 2024</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4">
           <div className="grid auto-rows-min gap-4 md:grid-cols-5">
-            {Array.from({ length: 15 }).map((_, i) => (
+            {Array.from({ length: 20 }).map((_, i) => (
               <div key={i} className="bg-muted/50 aspect-square rounded-xl" />
             ))}
           </div>
         </div>
       </SidebarInset>
     </SidebarProvider>
-  );
+  )
 }

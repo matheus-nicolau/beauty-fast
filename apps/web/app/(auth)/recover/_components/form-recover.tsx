@@ -4,10 +4,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useTransition } from "react";
-import Spinner from "@/components/ui/spinner";
 import { handleRecover } from "../_action/handleRecover";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Spinner } from "@/components/ui/spinner";
 
 export default function FormRecover() {
   const [isPending, startTransition] = useTransition();
@@ -37,7 +37,7 @@ export default function FormRecover() {
           />
         </div>
         {isPending ? (
-          <Spinner spinnerProps={"border-zinc-400"} />
+          <Spinner />
         ) : (
           <div className="flex flex-col gap-3">
             <Link
