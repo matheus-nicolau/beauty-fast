@@ -4,17 +4,21 @@ import * as React from "react";
 
 import { Calendar } from "@/components/ui/calendar";
 
-export default function CalendarSide() {
+export function CalendarModel() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
+
+  function handleSelect(dateNew: Date | undefined) {
+    setDate(dateNew);
+    console.log(dateNew);
+  }
 
   return (
     <Calendar
       mode="single"
       defaultMonth={date}
       selected={date}
-      onSelect={setDate}
-      disabled={undefined}
-      className="rounded-lg border shadow-sm ml-4 sm:ml-1"
+      onSelect={(dateNew) => handleSelect(dateNew)}
+      className="rounded-lg border shadow-sm"
     />
   );
 }

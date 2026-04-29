@@ -13,7 +13,7 @@ import {
   SidebarRail,
   SidebarSeparator,
 } from "@/components/ui/sidebar";
-import CalendarSide from "./calendar-side";
+import { CalendarModel } from "@/components/calendarModel";
 
 const data = {
   user: {
@@ -30,8 +30,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavUser user={data.user} />
       </SidebarHeader>
       <SidebarContent>
+        <CalendarModel />
         <SidebarSeparator className="mx-0" />
-        <CalendarSide />
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenu>
